@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listening Test</title>
+    </head>
+    <body>
+        <h1>Listening Test</h1>
+        <p>Here are 20 tracks under different conditions: clean, noisy or enhanced by different appoaches. Please press "play" button to hear different tracks and give your feedback to us. Thank you!</p>
+        
+        <br>
+        <hr>
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>///</th>
+                    <th>clean</th>
+                    <th>noisy</th>
+                    <th>Approach1</th>
+                    <th>Approach2</th>
+                    <th>Approach3</th>
+                    <th>Approach4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- First row -->
+                <tr>
+                    <td>track1</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <form action="evaluation.php" method="post">
+                            名字: <input type="text" name="fname">
+                            年龄: <input type="text" name="age">
+                            <input type="submit" value="提交">
+                        </form>
+                        <!-- <form action="evaluation.php" method="POST">
+                        <select name="myvalue">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <input type=submit>
+                        </form> -->
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                        </audio>
+                    </td>
+                        
+            </tbody>
+        </table>
+    </body>
+</html>
