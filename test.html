@@ -2,30 +2,90 @@
 <html>
     <head>
         <title>Listening Test</title>
+        <script src="main.js"></script>
+        <script type="text/javascript">
+            function sendEmail() {
+                var track1 = "p232_001"
+                var e = document.getElementById("1_1").value;
+                var items = [
+                    [document.getElementById("1_1").value, document.getElementById("1_2").value, document.getElementById("1_3").value, document.getElementById("1_4").value],
+                    [document.getElementById("2_1").value, document.getElementById("2_2").value, document.getElementById("2_3").value, document.getElementById("2_4").value],
+                    [document.getElementById("3_1").value, document.getElementById("3_2").value, document.getElementById("3_3").value, document.getElementById("3_4").value],
+                    [document.getElementById("4_1").value, document.getElementById("4_2").value, document.getElementById("4_3").value, document.getElementById("4_4").value],
+                    [document.getElementById("5_1").value, document.getElementById("5_2").value, document.getElementById("5_3").value, document.getElementById("5_4").value],
+                    [document.getElementById("6_1").value, document.getElementById("6_2").value, document.getElementById("6_3").value, document.getElementById("6_4").value],
+                    [document.getElementById("7_1").value, document.getElementById("7_2").value, document.getElementById("7_3").value, document.getElementById("7_4").value],
+                    [document.getElementById("8_1").value, document.getElementById("8_2").value, document.getElementById("8_3").value, document.getElementById("8_4").value],
+                    [document.getElementById("9_1").value, document.getElementById("9_2").value, document.getElementById("9_3").value, document.getElementById("9_4").value],
+                    [document.getElementById("10_1").value, document.getElementById("10_2").value, document.getElementById("10_3").value, document.getElementById("10_4").value],
+                    [document.getElementById("11_1").value, document.getElementById("11_2").value, document.getElementById("11_3").value, document.getElementById("11_4").value],
+                    [document.getElementById("12_1").value, document.getElementById("12_2").value, document.getElementById("12_3").value, document.getElementById("12_4").value],
+                    [document.getElementById("13_1").value, document.getElementById("13_2").value, document.getElementById("13_3").value, document.getElementById("13_4").value],
+                    [document.getElementById("14_1").value, document.getElementById("14_2").value, document.getElementById("14_3").value, document.getElementById("14_4").value],
+                    [document.getElementById("15_1").value, document.getElementById("15_2").value, document.getElementById("15_3").value, document.getElementById("15_4").value],
+                    [document.getElementById("16_1").value, document.getElementById("16_2").value, document.getElementById("16_3").value, document.getElementById("16_4").value],
+                    [document.getElementById("17_1").value, document.getElementById("17_2").value, document.getElementById("17_3").value, document.getElementById("17_4").value],
+                    [document.getElementById("18_1").value, document.getElementById("18_2").value, document.getElementById("18_3").value, document.getElementById("18_4").value],
+                    [document.getElementById("19_1").value, document.getElementById("19_2").value, document.getElementById("19_3").value, document.getElementById("19_4").value],
+                    [document.getElementById("20_1").value, document.getElementById("20_2").value, document.getElementById("20_3").value, document.getElementById("20_4").value]
+                ];
+                alert(items)
+                Email.send({
+                Host: "smtp.163.com",
+                Username: "shengbo_wang2@163.com",
+                Password: "DHXLGYGEWXZNIIGB",
+                To: 'shengbo_wang1@163.com',
+                From: "shengbo_wang2@163.com",
+                Subject: "speech enhancement",
+                Body: items,
+                })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+            }
+        </script>
     </head>
     <body>
-        <h1>Listening Test</h1>
-        <p>Here are 20 tracks under different conditions: clean, noisy or enhanced by different appoaches. Please hear different tracks and give your feedback to us. Thank you!</p>
+        <h1 align="center">Listening Test</h1>
+        <p align="center">Here are 20 tracks under different conditions: clean, noisy or enhanced by different appoaches. Please hear different tracks and give your feedback to us. Thank you!</p>
         
         <br>
         <hr>
         <!-- Table -->
-        <table>
+        <table align="center">
             <thead>
                 <tr>
-                    <th>///</th>
-                    <th>clean</th>
+                    <th>     </th>
                     <th>noisy</th>
+                    <th>clean</th>
+                    <th>     </th>
                     <th>Approach1</th>
+                    <th>     </th>
                     <th>Approach2</th>
+                    <th>     </th>
                     <th>Approach3</th>
+                    <th>     </th>
                     <th>Approach4</th>
+                    <th>     </th>
                 </tr>
             </thead>
             <tbody>
                 <!-- First row -->
                 <tr>
-                    <td>track1</td>
+                    <td>p232_001</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
                     <td>
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
@@ -33,55 +93,1541 @@
                         </audio>
                     </td>
                     <td>
-                        <audio controls="controls" height="100" width="100">
-                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
-                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls="controls" height="100" width="100">
-                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
-                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
-                        </audio>
-                    </td>
-                    <td>
-                        <!-- <form action="evaluation.php" method="GET">
-                            名字: <input type="text" name="fname">
-                            年龄: <input type="text" name="age">
-                            <input type="submit" value="提交">
-                        </form> -->
-                        <form action="evaluation.php" method="GET">
-                        <select name="myvalue">
+                        <select class="form-control" id="1_1">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <input type=submit>
-                        </form>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
                     </td>
                     <td>
                         <audio controls="controls" height="100" width="100">
-                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
-                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                            <source src="tracks/Approach2/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="1_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="1_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_001.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_001.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="1_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- Second row -->
+                <tr>
+                    <td>p232_002</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_002.wav" />
                         </audio>
                     </td>
                     <td>
                         <audio controls="controls" height="100" width="100">
-                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
-                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                            <source src="tracks/Original2/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_002.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_002.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="2_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_002.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="2_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_002.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="2_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_002.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_002.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="2_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- Third row -->
+                <tr>
+                    <td>p232_007</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_007.wav" />
                         </audio>
                     </td>
                     <td>
                         <audio controls="controls" height="100" width="100">
-                            <source src="tracks/Approach1/p232_001.wav" type="audio/wav" />
-                        <embed height="100" width="100" src="tracks/Approach1/p232_001.wav" />
+                            <source src="tracks/Original2/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_007.wav" />
                         </audio>
                     </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_007.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="3_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_007.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="3_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_007.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="3_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_007.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_007.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="3_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- Forth row -->
+                <tr>
+                    <td>p232_009</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="4_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="4_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="4_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_009.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_009.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="4_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 5th row -->
+                <tr>
+                    <td>p232_010</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="5_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="5_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="5_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_010.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_010.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="5_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 6th row -->
+                <tr>
+                    <td>p232_012</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="6_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="6_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="6_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_012.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_012.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="6_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 7th row -->
+                <tr>
+                    <td>p232_013</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="7_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="7_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="7_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_013.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_013.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="7_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 8th row -->
+                <tr>
+                    <td>p232_014</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="8_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="8_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="8_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_014.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_014.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="8_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 9th row -->
+                <tr>
+                    <td>p232_017</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="9_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="9_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="9_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_017.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_017.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="9_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 10th row -->
+                <tr>
+                    <td>p232_020</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="10_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="10_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="10_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_020.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_020.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="10_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 11st row -->
+                <tr>
+                    <td>p232_025</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="11_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="11_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="11_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_025.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_025.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="11_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 12nd row -->
+                <tr>
+                    <td>p232_027</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="12_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="12_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="12_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_027.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_027.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="12_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 13th row -->
+                <tr>
+                    <td>p232_028</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="13_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="13_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="13_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_028.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_028.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="13_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 14th row -->
+                <tr>
+                    <td>p232_029</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="14_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="14_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="14_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_029.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_029.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="14_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 15th row -->
+                <tr>
+                    <td>p232_030</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="15_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="15_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="15_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_030.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_030.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="15_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 16th row -->
+                <tr>
+                    <td>p232_031</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="16_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="16_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="16_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_031.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_031.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="16_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 17th row -->
+                <tr>
+                    <td>p232_032</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="17_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="17_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="17_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_032.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_032.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="17_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 18th row -->
+                <tr>
+                    <td>p232_033</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="18_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="18_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="18_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_033.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_033.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="18_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 19th row -->
+                <tr>
+                    <td>p232_034</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original1/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="19_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="19_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="19_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_034.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_034.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="19_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <!-- 20th row -->
+                <tr>
+                    <td>p232_035</td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                             <source src="tracks/Original1/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original1/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Original2/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Original2/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>   ||   </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach1/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach1/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="20_1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach2/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach2/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="20_2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach3/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach3/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="20_3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                    <td>
+                        <audio controls="controls" height="100" width="100">
+                            <source src="tracks/Approach4/p232_035.wav" type="audio/wav" />
+                        <embed height="100" width="100" src="tracks/Approach4/p232_035.wav" />
+                        </audio>
+                    </td>
+                    <td>
+                        <select class="form-control" id="20_4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>                          
+                    </td>
+                </tr>
+                <tr>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td>     </td>
+                    <td><button type="button" onclick="sendEmail()";>submit to us</button></td>
+                </tr>
                         
             </tbody>
         </table>
+        
+        <div style="margin-top: 100px"></div>
     </body>
-    <script src="main.js"></script>
+   
 </html>
