@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>Listening Test</title>
-        <script src="main.js"></script>
+        <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript">
+        
             function sendEmail() {
-                var track1 = "p232_001"
                 var e = document.getElementById("1_1").value;
                 var items = [
                     [document.getElementById("1_1").value, document.getElementById("1_2").value, document.getElementById("1_3").value, document.getElementById("1_4").value],
@@ -29,6 +29,7 @@
                     [document.getElementById("19_1").value, document.getElementById("19_2").value, document.getElementById("19_3").value, document.getElementById("19_4").value],
                     [document.getElementById("20_1").value, document.getElementById("20_2").value, document.getElementById("20_3").value, document.getElementById("20_4").value]
                 ];
+                
                 alert(items)
                 Email.send({
                 Host: "smtp.163.com",
@@ -45,7 +46,7 @@
             }
         </script>
     </head>
-    <body>
+    <body">
         <h1 align="center">Listening Test</h1>
         <p align="center">Here are 20 tracks under different conditions: clean, noisy or enhanced by different appoaches. Please hear different tracks and give your feedback to us. Thank you!</p>
         
@@ -57,7 +58,7 @@
                 <tr>
                     <th>     </th>
                     <th>noisy</th>
-                    <th>clean</th>
+                    <th id="clean_0">clean</th>
                     <th>     </th>
                     <th>Approach1</th>
                     <th>     </th>
@@ -72,14 +73,14 @@
             <tbody>
                 <!-- First row -->
                 <tr>
-                    <td>p232_001</td>
+                    <td id="label_1"></td>
                     <td>
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original1/p232_001.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original1/p232_001.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_1">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_001.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original1/p232_001.wav" />
@@ -156,7 +157,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_002.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_2">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_002.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_002.wav" />
@@ -233,7 +234,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_007.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_3">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_007.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_007.wav" />
@@ -310,7 +311,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_009.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_4">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_009.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_009.wav" />
@@ -387,7 +388,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_010.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_5">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_010.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_010.wav" />
@@ -464,7 +465,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_012.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_6">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_012.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_012.wav" />
@@ -541,7 +542,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_013.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_7">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_013.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_013.wav" />
@@ -618,7 +619,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_014.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_8">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_014.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_014.wav" />
@@ -695,7 +696,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_017.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_9">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_017.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_017.wav" />
@@ -772,7 +773,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_020.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_10">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_020.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_020.wav" />
@@ -849,7 +850,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_025.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_11">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_025.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_025.wav" />
@@ -926,7 +927,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_027.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_12">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_027.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_027.wav" />
@@ -1003,7 +1004,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_028.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_13">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_028.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_028.wav" />
@@ -1080,7 +1081,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_029.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_14">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_029.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_029.wav" />
@@ -1157,7 +1158,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_030.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_15">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_030.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_030.wav" />
@@ -1234,7 +1235,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_031.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_16">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_031.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_031.wav" />
@@ -1311,7 +1312,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_032.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_17">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_032.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_032.wav" />
@@ -1388,7 +1389,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_033.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_18">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_033.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_033.wav" />
@@ -1465,7 +1466,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_034.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_19">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_034.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_034.wav" />
@@ -1542,7 +1543,7 @@
                         <embed height="100" width="100" src="tracks/Original1/p232_035.wav" />
                         </audio>
                     </td>
-                    <td>
+                    <td id="clean_20">
                         <audio controls="controls" height="100" width="100">
                             <source src="tracks/Original2/p232_035.wav" type="audio/wav" />
                         <embed height="100" width="100" src="tracks/Original2/p232_035.wav" />
@@ -1629,5 +1630,6 @@
         
         <div style="margin-top: 100px"></div>
     </body>
+    <script type="text/javascript" src="visible.js"></script>
    
 </html>
