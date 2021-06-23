@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Listening Test</title>
+    </head>
+    
+    <body>
+        <input type="file" webkitdirectory>
+        <input type="file" id="filepicker" name="fileList" webkitdirectory multiple />
+        <input type="file" id="fileInput">
+
+        <ul id="listing"></ul> 
+        <div id='div1'></div>
+
+    </body>
+    <script>
+        document.getElementById("filepicker").addEventListener("change", function(event) {
+        let output = document.getElementById("listing");
+        let files = event.target.files;
+        for (let i=0; i<files.length; i++) {
+            let item = document.createElement("li");
+            item.innerHTML = files[i].webkitRelativePath;
+            output.appendChild(item);};
+
+        document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
+        console.log(this.files); // will contain information about the file that was selected.
+    });
+
+        var a="123";//以下为两种在页面上显示变量值的方式
+        document.getElementById('div1').innerHTML = a;//2、在div节点上显示
+    </script>
+    
+
+</html>
