@@ -6,30 +6,29 @@
         <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript">
         
-            function sendEmail() {
-                var e = document.getElementById("1_1").value;
-
-                var items = new Array(20);
-                for (var i = 0; i < 20; i++){
-                    items[i] = new Array(4);
-                    for (var j = 0; j < 4; j++){
-                        items[i][j] = document.getElementById(String(i + 1) + "_" + String(j + 1)).value
-                    }
-                } 
-                alert("please wait")
-                Email.send({
-                Host: "smtp.163.com",
-                Username: "shengbo_wang2@163.com",
-                Password: "DHXLGYGEWXZNIIGB",
-                To: 'shengbo_wang2@163.com',
-                From: "shengbo_wang2@163.com",
-                Subject: "speech enhancement",
-                Body: items + names + folders,
-                })
-                .then(function (message) {
-                    alert("mail sent successfully")
-                });
-            }
+            // function sendEmail() {
+            //     var e = document.getElementById("1_1").value;
+            //     var items = new Array(20);
+            //     for (var i = 0; i < 20; i++){
+            //         items[i] = new Array(4);
+            //         for (var j = 0; j < 4; j++){
+            //             items[i][j] = document.getElementById(String(i + 1) + "_" + String(j + 1)).value
+            //         }
+            //     } 
+            //     alert("please wait...")
+            //     Email.send({
+            //     Host: "smtp.163.com",
+            //     Username: "shengbo_wang2@163.com",
+            //     Password: "DHXLGYGEWXZNIIGB",
+            //     To: 'shengbo_wang2@163.com',
+            //     From: "shengbo_wang2@163.com",
+            //     Subject: "speech enhancement",
+            //     Body: items + names + folders,
+            //     })
+            //     .then(function (message) {
+            //         alert("mail sent successfully")
+            //     });
+            // }
         </script>
     </head>
     <body">
